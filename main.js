@@ -38,6 +38,13 @@ function check()
 	get_answer = document.getElementById("input_check_box").value;
 	if(get_answer == actual_answer)	
 	{
+	swal({
+			type: 'success',
+			title: 'Correct!',
+			text: 'Great job!',
+			showConfirmButton: false,
+			timer: 2000
+		  })
 		if(answer_turn == "player1")
 		{
 			player1_score = player1_score +1;
@@ -48,6 +55,15 @@ function check()
 			player2_score = player2_score +1;
 		    document.getElementById("player2_score").innerHTML = player2_score;
 		}
+	} else{
+		swal({
+			type: 'error',
+			title: 'Wrong!',		
+				text: 'Better luck next time!',
+
+			showConfirmButton: false,
+			timer: 2000
+		  })
 	}
 	
 	if(question_turn == "player1")
